@@ -1,0 +1,50 @@
+<div class='medium-list'>
+    <div class='list-viewer-wrapper'>
+        <div class='list-header-title'><h1>Student form</h1></div>
+
+        <form [formGroup]="studentForm" (ngSubmit)="studentForm.valid && onStudentSubmit()" noval>
+            <div class="form-container">
+                <mat-form-field>
+                    <input id="name"
+                            matInput
+                            formControlName="name"
+                            [(ngModel)]="student.name"
+                            placeholder="Enter your full name" />
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input id="student_emailID"
+                            matInput
+                            formControlName="student_emailID"
+                            [(ngModel)]="student.student_emailID"
+                            placeholder="Enter your email ID" />
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input id="USN"
+                            matInput
+                            formControlName="USN"
+                            [(ngModel)]="student.USN"
+                            placeholder="Enter your University Registration number" />
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input id="repoID"
+                            matInput
+                            formControlName="repoID"
+                            [(ngModel)]="student.repoID"
+                            placeholder="Paste your repository link here" />
+                </mat-form-field>
+
+                <button mat-button type="submit" class='mat-raised-button mat-primary' [disabled]='!studentForm.valid'><b>Submit</b></button>
+                <button mat-button type="reset" class='divider'>Reset</button>
+                
+                
+                <button mat-button class='divider'>Edit</button>
+            
+
+
+            </div>
+        </form>
+    </div>
+</div>
